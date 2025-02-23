@@ -1,0 +1,19 @@
+reverse():
+There are two "parts" to the reverse function.
+The first part is traversing through the entire list to push all values into a temp list. 
+This complexity is O(n) because it just depends on the number of elements in the list.
+The second part is swapping the entirety of the calling list with the temporary list.
+This complexity is O(1) because it is not dependent on how many values are in either list.
+
+Therefore, the overall complexity of the reverse() function is O(n), as the most complex part of 
+this function (traversing through each value) takes precedence.
+
+remove_if():
+There are also two "parts" in this function.
+The first part is traversing through the entire list, which is O(n).
+The second part is using a predicate function to ask if that condition is true.
+The predicate function can vary in complexity due to the different conditions we can check for,
+so in general, we can say the complexity is O(f(n)), where f(n) is a function of input size n.
+
+Therefore, the overall complexity for the remove_if() function is O(n * f(n)) because we combine
+the potential comlexity of the predicate section O(f(n)) with the complexity of traversing the list O(n). 

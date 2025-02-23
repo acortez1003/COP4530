@@ -1,0 +1,18 @@
+Worst-Case Run-Time Complexity of clear() in Stack Template Class
+-----------------------------------------------------------------
+The worst-case run-time complexity of member function clear() is purely dependent
+on the container that I chose. the container I used was the vector STL.
+For reference, this is my clear() function:
+
+template <typename T>
+void Stack<T>::clear()
+{
+    data.clear();
+}
+so it directly calls vector's clear function.
+
+For a vector, you typically have to use the delete keywordand then reset 
+all of the member data. Resetting all of the member data is constant at O(1), 
+but the delete keyword traverses through each data element, which is O(n). 
+Therefore, the time-complexity for my clear() functionis O(n) because it calls 
+on vector's clear() function which traverses through each data element.

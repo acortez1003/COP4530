@@ -1,0 +1,18 @@
+    Reading through the input set had a complexity of O(N) since we have to
+go through each character to create our hashtables.
+
+    To store my values, I created three hashtables. One for characters, one for words, and one for numbers. 
+Inserting into a hashtable is, on average, O(1), but I'm also doing it as I'm reading through the input
+and each element gets added to their respective hashtable as it goes through the input.
+
+    The tracking info is also updated as I'm iterating through the input so all I have to do
+is organize it in order. I take my hashtables and put them into vectors. Copying the information 
+over into the vector will be worst case O(N), where N is the number of elements in the hashtable.
+Note that this will be much less elements than reading our input as we have already organized the data.
+
+    Next, we can take these vectors and apply a quick sort on them, sorting with the largest frequency in front.
+On average, a quick sort will gives us O(NlogN). While we're applying the quick sort, we're also checking if
+there are ties and dealing with them accordingly as to not waste time doing it separately.
+
+    Lastly, we're resizing the vectors to only being of size 10 to only show our "Top Ten". Resizing, on average, 
+would be O(1) since we're only copying over the first 10 elements over and not the entire vector.

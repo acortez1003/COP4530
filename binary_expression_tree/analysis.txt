@@ -1,0 +1,17 @@
+makeEmpty(BinaryNode* &t) Analysis
+----------------------------------
+The makeEmpty() function in my BET class is a recursive function,
+which goes through the left and right subtrees until it has successfully
+deleted all of the nodes. Since it will visit each node exactly once in a 
+worst-case scenario, the time complexity of makeEmpty() is O(n).
+
+void BET::makeEmpty(BinaryNode* &t)
+{
+    if(t != nullptr)
+    {
+        makeEmpty(t->left);
+        makeEmpty(t->right);
+        delete t;
+    }
+    t = nullptr;
+}
